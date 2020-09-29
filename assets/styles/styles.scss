@@ -1,0 +1,265 @@
+$primary                    : rgb(10, 65, 54);
+$body                       : #f0e6df;
+$width90                    : 90%;
+$width80                    : 75%;
+
+*
+{
+    margin                  : 0;
+    padding                 : 0;
+    box-sizing              : border-box;
+    font-family             : 'Satisfy', cursive;
+    // font-size               : 100%;
+    line-height             : 1.5;
+}
+
+body 
+{
+    background-color        : $body;
+    transition              : background-color .5s ease-in-out;
+    overflow-x              : hidden ;
+}
+
+.header 
+{
+    width                   : 100%;
+    height                  : 100vh !important;
+    background-image        : url(https://www.la-critica.org/wp-content/uploads/yerbasm.jpg); 
+    background-size         : cover;
+    background-position     : center center;
+    background-attachment   : fixed ;
+    animation                 : slide 10s infinite;
+}
+
+@keyframes slide 
+{
+    0%
+    {
+        // background-image        : url(https://cdn.shopify.com/s/files/1/1715/0177/files/Main_1_FLOWERS_FLUR9480_01_Muted_200_Landscape_Hero_2048x.jpg?v=1587566814);   
+        background-image        : url(https://www.la-critica.org/wp-content/uploads/yerbasm.jpg);   
+    } 
+    33%
+    {
+        // background-image        : url(https://cdn.shopify.com/s/files/1/1715/0177/files/Main_1_FLOWERS_FLUR9480_01_Muted_200_Landscape_Hero_2048x.jpg?v=1587566814);   
+        background-image        : url(https://www.la-critica.org/wp-content/uploads/yerbasm.jpg);   
+    } 
+    34%
+    {
+        background-image        : url(https://cdn.shopify.com/s/files/1/1715/0177/files/flur-homepage-slide3_2048x.jpg?v=1591306108);
+        // background-image        : url(https://www.tropicozacatecas.com/wp-content/uploads/2018/10/HERBOLARIA-MIGRANTES.jpg);   
+
+    }
+    66%
+    {
+        // background-image        : url(https://www.tropicozacatecas.com/wp-content/uploads/2018/10/HERBOLARIA-MIGRANTES.jpg);   
+        background-image        : url(https://cdn.shopify.com/s/files/1/1715/0177/files/flur-homepage-slide3_2048x.jpg?v=1591306108);   
+    }
+    67%
+    {
+        background-image        : url(https://cdn.shopify.com/s/files/1/1715/0177/files/Main_2_PLANTS_Products_Medium_Plant_Calathea_Detail_1062_2048x.jpg?v=1587574941);
+    }
+    100%
+    {
+        background-image        : url(https://cdn.shopify.com/s/files/1/1715/0177/files/Main_2_PLANTS_Products_Medium_Plant_Calathea_Detail_1062_2048x.jpg?v=1587574941);   
+    }
+}
+
+
+// styles hamburguer 
+.btnMenu
+{
+    outline                     : none !important;
+    border                      : 1px solid $primary;
+    // border                      : 1px solid white;
+    border-radius               : 100%;
+    width                       : 45px !important;
+    height                      : 45px !important;
+    // display                     : grid !important;
+    // place-items                 : center !important;
+    position                    : relative;
+    transform                   : scale(.7) ;
+
+    @media (min-width : 700px)
+    {
+        display                 : none;
+    }
+
+    .btnBox
+    {
+        // display                     : grid !important;
+        // place-items                 : center !important;
+        width                       : 30px !important;
+        height                      : 30px !important;
+        // border                  : 2px solid red !important;
+        position                    :absolute;
+        top                         : 50%;
+        left                        : 50%;
+        transform                   : translate(-50%, -50%) ;
+    }
+
+    .btnInner,
+    .btnInner::after,
+    .btnInner::before
+    {
+        background-color                : $primary !important;
+        width                       : 30px !important;
+        padding                         : 0 !important;
+        margin                         : 0 !important;
+    }
+
+    .btnInnerModificated,
+    .btnInnerModificated::after,
+    .btnInnerModificated::before
+    {
+        background-color                : #fff !important;
+    }
+
+    .btnMenuModificated {
+        border                      : 1px solid #fff;
+    }
+
+}
+
+// * navigation
+
+.nav 
+{
+    width                       : $width90;
+    margin                      : auto;
+    position                    : fixed;
+    top                         : 2vh;
+    left                        : 0;
+    right                       : 0;
+    // border                      : 2px solid;
+    border-bottom               : 1px solid $primary;
+    display                     : flex;
+    align-items                 : center;
+    z-index                     : 1000;
+
+    @media (min-width : 700px)
+    {
+        width                   : $width80;
+    }
+
+    .title 
+    {
+        // color                       : $primary;
+        // border                      : 1px solid;
+        margin                      : auto;
+        position                    : relative;
+
+        a
+        {
+            text-decoration         : none;
+            color                   : $primary;
+            font-size               : 2.5rem;
+            font-weight             : normal;
+        }
+
+        @media (min-width: 700px)
+        {
+            margin                  : 0;
+            position                : fixed;
+            top                     : 2vh;
+            left                    : 1vw;
+            writing-mode            : vertical-lr;
+            // text-orientation        : upright;
+        }
+    }
+
+
+    // * menu list
+
+    .list 
+    {
+        display                     : none;
+        
+        @media (min-width : 700px)
+        {
+            // border                      : 1px solid;
+            list-style                  : none;
+            display                     : flex;
+            justify-content             : space-evenly;
+            width                       : 100%;
+
+
+            .list-item 
+            {
+                // border                  : 2px solid;
+                border-bottom               : 2px solid transparent;
+                
+                .list-link 
+                {
+                    text-decoration             : none;
+                    color                       : $primary;
+                    text-transform              : uppercase;
+                    display                     : block;
+                    padding                     : 0 .5rem;
+                    font-weight                 : 700;
+                    position                    : relative;
+                }
+            }
+        }
+    }
+}
+
+// * add border-bottom 
+.borderBottom
+{
+    border-bottom                   : 2px solid $primary;
+}
+
+
+
+
+
+// * styles menu mobile
+
+.menuMobile
+{
+    position                    : fixed;
+    top                         : 0; 
+    left                        : 0;
+    bottom                      : 0;
+    right                       : 0;
+    background-color            : $primary;
+    transform                   : translate(-100%);
+    // opacity                     : .5 ;
+    transition                  : transform .5s ease-in-out;
+
+    .list-mobile 
+    {
+        // border                      : 2px solid white;
+        margin-top                  : 20%;
+        
+        .list-item-mobile
+        {
+            // border                      : 2px solid white;
+            text-align                  : center;
+        }
+        
+        .list-link-mobile 
+        {
+            // border                      : 2px solid red;
+            width                       : max-content;
+            margin                      : auto;
+            color                       : #fff;
+            text-decoration             : none;
+            font-size                   : 1.5rem;
+            display                     : block;
+            padding                     : .5rem;
+        }
+    }
+}
+
+// * show menu mobile
+.show 
+{
+    transform                   : translate(0);
+}
+
+// * change color of the title to white
+.titleModificated 
+{
+    color     : #fff !important
+}
